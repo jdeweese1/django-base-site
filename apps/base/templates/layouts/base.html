@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load compress static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block style %}
+        {% compress css %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        {% endcompress %}
+        {% endblock style %}
+        {% block script %}
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        {% endblock script %}
+    </head>
+
+    <body{% block body_attr %} class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}"{% endblock %}>
+
+        {% block base_header %}
+
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light bg-faded">
+                    {% block navigation %}
+                        {% include 'blocks/navigation.html' %}
+                    {% endblock navigation %}
+                </nav>
+            </div>
+
+        {% endblock base_header %}
+
+
+        {% block base_content %}
+        <div id="main-content" class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        {% endblock base_content %}
+
+        {% block base_footer %}
+
+        {% endblock base_footer %}
+
+        {% block bottom_script %}
+            <script src="{% static 'js/base.js' %}"></script>
+        {% endblock bottom_script %}
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+*.pyc
+/*console.log
+/.coverage
+/.env
+/.vagrant
+/db.sqlite
+/docs/_build/
+/htmlcov
+/latest.dump
+/node_modules
+/public/static
+/.envrc
+/.idea

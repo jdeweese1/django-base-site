@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block style %}
+	{{ block.super }}
+{% endblock style %}
+
+{% block script_bottom %}
+{% endblock script_bottom %}
+{% block content %}
+	<div>
+		<div class="lead">About Me</div>
+        {% comment %}
+        <figure class="figure">
+		    <img src="{% static "media/selfPhoto.jpg" %}" height="150" alt="photo not found" class="inline float-left"/>
+        </figure>
+        {% endcomment %}
+        <p class="inline"> I'm Jarod DeWeese, a Computer Science Student at Kansas State University. I'm also a Student Developer for <a href="https://www.pears.oeie.org">PEARS</a> at the <a href="http://www.k-state.edu/oeie/">OEIE</a> at K-State. Additionally, I am an avid podcast listener, my favorite being the <a href="http://atp.fm">Accidental Tech Podcast</a> hosted by <a href="http://marco.org">Marco Arment,</a> <a href="http://caseyliss.com">Casey Liss</a>, and <a href="http://hypercritical.co/">John Siracusa</a>. I've also been know to enjoy <a href="relay.fm/mpu">Mac Power Users</a>, <a href="http://dobyfriday.com">Do By Friday</a>, <a href="http://hellointernet.fm">Hello Internet</a>, and <a href="https://www.relay.fm/cortex">Cortex</a>.
+        </p>
+
+        <p>Because I am a total nerd, I love find cool software to make my life easier. One such app that I love to use is <a href="https://folivora.ai/">BetterTouchTool</a>. BTT is a powerful tool  designed to automate/create shortcuts for the Mac. I use BTT everyday for things such as: rebinding key commands and trackpad gestures, running terminal commands, inserting custom text, or rearranging windows. Although I use BTT regularly, I barely even scratch the surface of what it's capable of.
+        </p>
+        <p>Another such app is called <a href="https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12">Amphetamine.</a> I use Amphetamine to keep my Mac from ever automatically going to sleep. If you want to be a real power user, there are many switches to flip in it's preferences.</p>
+        <p>How could I not mention my email client of choice? It's Airmail, both on the desktop and on mobile. I love all the features put into it, and the iCloud sync feature, along with email sorting rules.</p>
+    </div>
+
+        <p> In my free time I enjoy running, baking, reading, programming and writing prose.</p>
+		<p> My favorite programming languages right now are C# and Python, but I also have experience in Java.</p>
+		<a href="https://github.com/jdeweese1">Find me on GitHub</a>
+		<br>
+		<a href="https://twitter.com/jaroddeweese">Follow me on Twitter</a>
+		<br>
+		<h3>My resumé</h3>
+		<ul>
+			<a href="{% static "media/resume.docx" %}">As a word doc</a>
+			<br>
+			<a href="{% static "media/resume.md" %}">As a github flavored markdown document</a>
+			<br>
+			<a href="{% static "media/resume.pdf" %}">As a pdf document</a>
+		</ul>
+	</div>
+{% endblock content %}

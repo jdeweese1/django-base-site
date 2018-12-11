@@ -1,0 +1,21 @@
+{% extends 'base/base_form.html'%}
+{% load bootstrap compress static %}
+{% block style %}
+	{{ block.super }}
+{% endblock style %}
+
+{% block script %}
+	{{ block.super }}
+{% endblock script %}
+
+{% block content %}
+	<form action="." method="post" enctype="multipart/form-data" data-disable-change="disable_change_warning">
+		{% csrf_token %}
+		{{ form|bootstrap }}
+
+		<div><button type="submit" class="btn btn-primary">Submit</button></div>
+		<br>
+
+
+	</form>
+{% endblock content %}

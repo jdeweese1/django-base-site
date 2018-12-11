@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+{% load compress static staticfiles %}
+{% block style %}
+    {{ block.super }}
+{% endblock style %}
+{% block content %}
+<div class="container-fluid">
+    <header>
+        <h2 class="sender_name block">Sender name: {{ object.sender_name }}</h2>
+        <h4 class="subject">Subject: {{ object.subject}}</h4>
+        <p class="created">Submitted at: {{ object.created }} </p>
+    </header>
+    <div class="message">
+        <div>Message:</div>
+        {{ object.message }}
+        <hr>
+    </div>
+</div>
+{% endblock %}

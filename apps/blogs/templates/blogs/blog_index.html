@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block style %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "css/blog.css" %}">
+{% endblock style %}
+{% block content %}
+
+    {% for blog_post in posts_list %}
+        {% include "blogs/blog_post.html" with objects=blog_post %}
+    {% endfor %}
+{% endblock content %}
