@@ -88,10 +88,12 @@ WSGI_APPLICATION = env('WSGI_APPLICATION', default='config.wsgi.application')
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+DB_NAME = env('DB_NAME', default='jarodweb')
+DB_PASSWORD = env('DB_PASSWORD', default='')
+DB_USER = env('DB_USER', default='admin')
+DATABASES = {}
+DATABASES['default'] = env.db(default=f'mysql://{DB_USER}:{DB_PASSWORD}@127.0.0.1:3306/{DB_NAME}')
 
-DATABASES = {
-    'default': env.db(default='sqlite:///{0}'.format(BASE_DIR.joinpath('db.sqlite'))),
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -209,7 +211,7 @@ SESSION_REDIS = {
 }
 
 SITE_ID = 1
-SITE_NAME = "Django Base Site"
+SITE_NAME = "Jarod's Personal Website"
 
 # DJANGO DEBUG TOOLBAR SETTINGS
 if DEBUG is True:
@@ -249,6 +251,6 @@ if 'test' in sys.argv:
     )
 
     DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': ':memory:'
     }
