@@ -14,10 +14,11 @@ class BlogForm(forms.ModelForm):
             self.fields['content'].initial = self.blog_post.content
             self.fields['author'].initial = self.blog_post.author
             self.fields['pub_date'].initial = self.blog_post.pub_date
+            self.fields['is_hidden'].initial = self.blog_post.is_hidden
 
     class Meta:
         model = Blog
-        fields = ('title', 'author', 'pub_date', 'content')
+        fields = ('title', 'author', 'pub_date', 'content','is_hidden')
 
     def save(self, commit=True):
         super().save(commit=commit)
