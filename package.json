@@ -1,5 +1,7 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "npm": "^5.7.1"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "bootstrap": "~4.1",
