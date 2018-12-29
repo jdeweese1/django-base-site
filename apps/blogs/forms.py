@@ -18,7 +18,7 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = Blog
-        fields = ('title', 'author', 'pub_date', 'content','is_hidden')
+        fields = ('title', 'author', 'pub_date', 'content', 'is_hidden')
 
     def save(self, commit=True):
         super().save(commit=commit)
