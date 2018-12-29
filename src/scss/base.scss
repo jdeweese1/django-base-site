@@ -13,7 +13,6 @@
     --dark-brown-3: #967259ff;
     --dark-brown-2: #dbc1acff;
     --dark-brown-1: #ece0d1ff;
-    --light-brown-5;
 }
 h1, h2{
 	color: black;
@@ -92,9 +91,6 @@ img{
    float: left;
    margin: 0 20px 20px 20px;
 }
-.siteByline h1{
-	text-align: center;
-	color: #ffffff;
 
 .menu {
 	text-transform: uppercase;
@@ -105,36 +101,3 @@ img{
 .menu a {
 	color: #b59575;
 }
-#mastheadbackround {
-    height: 140px;
-    margin-bottom: -140px;
-    background-color: #372312;
-}
-
-#masthead{
-/*background-color: var(--main-contrast-color,red);*/
-background-color: #372312
-font-size: 0.9em;
-    color: #f1e0d4;
-    padding: 0;
-    margin:auto;
-}
-
-#masthead h1 {
-    font-weight: normal;
-    font-size: 2em;
-    margin-top: 0;
-    padding-top: 0.5em;
-    margin-bottom: 0.25em;
-}
-#masthead p
-{
-	text-align: center;
-}
-#masthead nav {
-	display: block;
- 	margin: 0;
- 	padding: 1em 0;
- 	margin-bottom: 10px;
- 	color: #5c3b1e;
- }
