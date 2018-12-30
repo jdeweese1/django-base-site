@@ -7,7 +7,7 @@
     "gulp-babel": "^7.0.1",
     "gulp-browser": "^3.0.11",
     "gulp-clean": "^0.4.0",
-    "gulp-livereload": "^4.0.0",
+    "gulp-livereload": "^4.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
@@ -17,7 +17,7 @@
     "popper.js": "^1.14.3"
   },
   "dependencies": {
-    "npm": "^5.7.1"
+    "npm": "^6.5.0"
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/gulp build"
