@@ -1,12 +1,13 @@
-from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
-from django.shortcuts import redirect
-from django.utils import timezone
-from django.views import generic
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseForbidden
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from django.utils import timezone
+from django.views import generic
+
 from .forms import BlogForm
 from .models import Blog
+
 # from django.contrib import admin
 
 

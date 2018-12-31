@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
+
 from apps.base import mixins
+
 # Create your models here.
 
 

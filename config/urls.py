@@ -3,6 +3,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.generic import TemplateView
+
 from allauth.account.views import LoginView
 
 from apps.base.views import AboutView, IndexView, NameChange, http_404, http_500
