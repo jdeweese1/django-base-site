@@ -36,6 +36,10 @@ class AboutView(generic.TemplateView):
     template_name = 'about.html'
 
 
+class PortfolioView(generic.TemplateView):
+    template_name = 'portfolio.html'
+
+
 def http_500(request):
     raise Exception
 

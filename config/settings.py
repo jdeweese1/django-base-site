@@ -37,7 +37,7 @@ DJANGO_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
- )
+)
 
 PROJECT_APPS = (
     'apps.blogs',
@@ -170,6 +170,9 @@ else:
     print(BASE_DIR)
     STATIC_ROOT = str(public_root.joinpath('static'))
     STATIC_URL = '/public/static/'
+    STATICFILES_DIRS = [
+        str(BASE_DIR.joinpath('static')),
+    ]
 
 # CACHE SETTINGS
 REDIS_HOST = env('REDIS_HOST', default='redis')

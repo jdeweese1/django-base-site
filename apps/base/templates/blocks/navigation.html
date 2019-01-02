@@ -1,19 +1,14 @@
-<div class="navbar-collapse navbar">
-	<ul class="main nav navbar-nav">
-		{% comment %}
-		<li>
-			<a href="{% url 'site_index' %}">Home</a>
+	<ul class="nav justify-content-center">
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'site_about' %}">About</a>
 		</li>
-		{% endcomment %}
-		<li>
-			<a href="{% url 'site_about' %}">About</a>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'contact:site_contact' %}">Contact</a>
 		</li>
-		<li>
-			<a href="{% url 'contact:site_contact' %}">Contact</a>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'blogs:blog_index' %}">Blog</a>
 		</li>
-		<li>
-			<a href="{% url 'blogs:blog_index' %}">Blog</a>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'portfolio_index' %}">Portfolio</a>
 		</li>
-
 	</ul>
-</div>

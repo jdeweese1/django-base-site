@@ -2,12 +2,10 @@ from django.conf import settings
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path, re_path
-from django.views.generic import TemplateView
 
 from allauth.account.views import LoginView
 
-from apps.base.views import AboutView, IndexView, NameChange, http_404, http_500
-from apps.contact.views import ContactFormView
+from apps.base.views import AboutView, IndexView, NameChange, PortfolioView, http_404, http_500
 
 urlpatterns = []
 
@@ -33,8 +31,9 @@ urlpatterns += [
     path('accounts/name/', NameChange.as_view(), name='account_change_name'),
     path('accounts/', include('allauth.urls')),
     path('accounts/signup', LoginView.as_view(), name='redirected_signup'),
-    url('about/', AboutView.as_view(), name='site_about'),# Redirected signup to sign in bc I don't want just anyone to be able to make an account
+    url('about/', AboutView.as_view(), name='site_about'),  # Redirected signup to sign in bc I don't want just anyone to be able to make an account
     re_path(r'^contact/', include('apps.contact.urls', namespace='contact')),
     re_path(r'^blog/', include('apps.blogs.urls', namespace='blogs')),
+    re_path(r'^portfolio/', PortfolioView.as_view(), name='portfolio_index'),
 
 ]
