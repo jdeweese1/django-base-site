@@ -1,14 +1,11 @@
-from django.contrib.auth.views import LoginView
 from django.http import HttpResponseForbidden
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
 
 from .forms import BlogForm
 from .models import Blog
-
-# from django.contrib import admin
 
 
 class BlogIndex(generic.TemplateView):
@@ -52,9 +49,6 @@ class BlogCreateView(generic.FormView, generic.CreateView):
     object = None
     template_name = 'blogs/blog_edit.html'
 
-    def get_success_url(self):
-        return reverse('blogs:blog_index')
-
 
 class BlogListView(generic.ListView):
     model = Blog
@@ -83,4 +77,4 @@ class BlogDetailView(generic.DetailView, generic.detail.SingleObjectMixin):
         self.object = self.get_object()
         if self.object.is_hidden and not request.user.is_superuser:  # If not superuser, they don't have access
             return HttpResponseForbidden()
-        return super().dispatch(request,args,kwargs)
+        return super().dispatch(request, args, kwargs)

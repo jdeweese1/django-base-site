@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
@@ -22,7 +22,7 @@ class ContactFormView(generic.FormView, generic.CreateView):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
         Contact.objects.create(sender_name=sender_name, email=email, subject=subject, message=message, created=timezone.now())
-        return redirect(reverse('site_index'))#add a list view
+        return redirect(reverse('site_index'))  # add a list view
 
 
 class ContactListView(generic.ListView):

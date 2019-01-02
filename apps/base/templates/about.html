@@ -8,15 +8,13 @@
 {% endblock script_bottom %}
 {% block content %}
 	<div>
-		<h1 class="display-2">About Me</h1>
+		<h1 class="display-4">About Jarod DeWeese</h1>
 
 		<p class="inline">
-		{% comment %}
 		<div class="media-left inline">
-				<img class="media-object inline" src="https://avatars2.githubusercontent.com/u/32393906?s=150&v=4" alt="..."/>
+				<img class="media-object inline" src="{% static "media/selfPhoto.jpg" %}" alt="👦🏼" height="100"/>
 		</div>
-		{% endcomment %}
-I'm Jarod DeWeese, a Computer Science Student at Kansas State University. I grew up in the small(ish) Kansas town of <a target="_blank" href="https://en.wikipedia.org/wiki/Pratt%2C_Kansas">Pratt</a> which is actually in the middle of nowhere. Currently I'm a Student Developer for <a target="_blank" href="https://www.pears.oeie.org">PEARS</a> at the <a target="_blank" href="http://www.k-state.edu/oeie/">OEIE</a> at K-State. Additionally, I am an avid podcast listener, my favorite being the <a target="_blank" href="http://atp.fm">Accidental Tech Podcast</a> hosted by <a href="http://marco.org">Marco Arment,</a> <a href="http://caseyliss.com">Casey Liss</a>, and <a href="http://hypercritical.co/">John Siracusa</a>. I've also been know to enjoy <a target="_blank" href="http://www.relay.fm/mpu">Mac Power Users</a>, <a href="http://dobyfriday.com">Do By Friday</a>, <a target="_blank" href="http://hellointernet.fm">Hello Internet</a>, <a target="_blank" href="http://relay.fm/topfour">Top Four</a>, and <a target="_blank" href="https://www.relay.fm/cortex">Cortex</a>. All of these podcasts are pretty heavily focused on Apple and technology, and they first got me interested in tech.
+		<p>Hi, I'm Jarod. I'm a Computer Science Student at Kansas State University. I grew up in the small(ish) Kansas town of <a target="_blank" href="https://en.wikipedia.org/wiki/Pratt%2C_Kansas">Pratt</a> which is actually in the middle of nowhere. Currently I'm a Student Developer for <a target="_blank" href="https://www.pears.oeie.org">PEARS</a> at the <a target="_blank" href="http://www.k-state.edu/oeie/">OEIE</a> at K-State. Additionally, I am an avid podcast listener, my favorite being the <a target="_blank" href="http://atp.fm">Accidental Tech Podcast</a> hosted by <a href="http://marco.org">Marco Arment,</a> <a href="http://caseyliss.com">Casey Liss</a>, and <a href="http://hypercritical.co/">John Siracusa</a>. I've also been know to enjoy <a target="_blank" href="http://www.relay.fm/mpu">Mac Power Users</a>, <a href="http://dobyfriday.com">Do By Friday</a>, <a target="_blank" href="http://hellointernet.fm">Hello Internet</a>, <a target="_blank" href="http://relay.fm/topfour">Top Four</a>, and <a target="_blank" href="https://www.relay.fm/cortex">Cortex</a>. All of these podcasts are pretty heavily focused on Apple and technology, and they first got me interested in tech.
         </p>
 		<h2 class="display-3">My current setup</h2>
         <p>Because I am a total nerd, I love find cool software to make my life easier. One such app that I love to use is <a target="_blank" href="https://folivora.ai/">BetterTouchTool</a>. BTT is a powerful tool  designed to automate/create shortcuts for the Mac. I use BTT everyday for things such as: rebinding key commands and trackpad gestures, running terminal commands, inserting custom text, or rearranging windows. This may seem really overwhelming at first, but given enough time, I think it can become any Mac power user's best friend. Even though I use BTT daily, I still barely even scratch the surface of what it's capable of.
@@ -29,30 +27,9 @@ I'm Jarod DeWeese, a Computer Science Student at Kansas State University. I grew
     </div>
 
 		<p> I'm absolutely a person that must have creative side projects to stay busy, in the past they have ranged from photography, graphic design, writing, and cooking.
-		<h2 class="display-3">About this Site</h2>
-		<p>
-			This site is built with Django, a Python framework for web application development. The skeleton of this project comes from <a target="_blank" href="https://github.com/epicserve/django-base-site">Brent O'Connor's Django Base Site.</a> By making some modifications, like adding a <a target="_blank" href="{% url 'contact:site_contact' %}">contact</a> form, <a target="_blank" href="{%  url 'blogs:blog_index' %}">blog</a>, and corresponding admin forms I've made my own custom site. For deployment, for the moment I'm using Brent's recipe for <a target="_blank" href="https://heroku.com">Heroku</a>.</p>
+
 		</p>
-		<a target="_blank" href="https://github.com/jdeweese1">Find me on GitHub</a>
-		<br>
-		<a target="_blank" href="https://twitter.com/jaroddeweese">Follow me on Twitter</a>
-		<br>
-{% comment %}
-		<h3>My resumé</h3>
-		<ul>
-			<a target="_blank" href="{% static "media/resume.docx" %}">As a word doc</a>
-			<br>
-			<a target="_blank" href="{% static "media/resume.md" %}">As a github flavored markdown document</a>
-			<br>
-			<a target="_blank" href="{% static "media/resume.pdf" %}">As a pdf document</a>
-		</ul>
-		<h3>Here is some simple graphic design I've done in the past</h3>
-		<img src="{% static "media/snowflakes.png" %}"></img>
-		<img src="{% static "media/piechart.png" %}"></img>
-		<img src="{% static "media/coola.png" %}"></img>
-		<img src="{% static "media/infinite.png" %}"></img>
-		<img src="{% static "media/liquid.png" %}"></img>
-{% endcomment %}
+
 
 	</div>
 {% endblock content %}

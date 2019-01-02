@@ -50,10 +50,10 @@ body{
 img{
 	float:left;
 	border-width: 5px;
-	border-color: var(--main-contrast-color,grey);
 	border-style: solid;
 	border-radius: 10px;
 	margin: 10px;
+	display: inline;
 }
 
 .left {

@@ -8,5 +8,8 @@
 
     {% for blog_post in posts_list %}
         {% include "blogs/blog_post.html" with objects=blog_post %}
+        {% if not forloop.last %}
+            <hr>
+        {% endif %}
     {% endfor %}
 {% endblock content %}
