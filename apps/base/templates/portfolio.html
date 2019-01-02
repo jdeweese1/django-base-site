@@ -4,17 +4,18 @@
 {% block content %}
 <p>A couple of my coding projects I'm very proud of are this <a href="{% url 'site_index' %}">website</a>, a <a target="_blank" href="https://github.com/jdeweese1/CIS308_Soduku">soduku solver</a>, and my software architecture & design <a target="_blank" href="https://github.com/jdeweese1/501Project"> final project.</a></p>
 
-<h3 class="display-4">This site</h3>
+<h1 class="display-4 text-center">This site</h1>
 	<p>This site is built with Django, a Python framework for web application development. The skeleton of this project comes from <a target="_blank" href="https://github.com/epicserve/django-base-site">Brent O'Connor's Django Base Site.</a> By making some modifications, like adding a <a target="_blank" href="{% url 'contact:site_contact' %}">contact</a> form, <a target="_blank" href="{%  url 'blogs:blog_index' %}">blog</a>, and corresponding admin forms I've made my own custom site. For deployment, for the moment I'm using Brent's recipe for <a target="_blank" href="https://heroku.com">Heroku</a>. </p>
 
-<h3 class="display-4">Soduku solver</h3>
+<h1 class="display-4 text-center">Soduku solver</h1>
 	<p>I helped build a soduku solver in C as our final project in my C lab. My part in the lab was teach my partners how to use Git in a collaborative environment. Additionally, I wrote the test framework of the core of the project, as well as helper methods. To streamline the presentation process in class, I wrote an autorunner shell script that would demo the features of our program with a single command. Our final product could solve, generate, and validate puzzles using file IO.
 	</p>
-
-		<h3>My resumé</h3>
-		<ul>
-			<a target="_blank" href="{% static "media/resume.docx" %}">As a word doc</a>
-			<br>
-			<a target="_blank" href="{% static "media/resume.pdf" %}">As a pdf document</a>
-		</ul>
+        <div class="container">
+            <h2 class="display-5">My resumé</h2>
+            <ul>
+                <a target="_blank" href="{% static "media/resume.docx" %}">As a word doc</a>
+                <br>
+                <a target="_blank" href="{% static "media/resume.pdf" %}">As a pdf document</a>
+            </ul>
+        </div>
 {% endblock content %}
