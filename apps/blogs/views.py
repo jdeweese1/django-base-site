@@ -51,12 +51,13 @@ class BlogCreateView(generic.FormView, generic.CreateView):
 
 
 class BlogListView(generic.ListView):
+    # Is my personal admin
     model = Blog
     paginate_by = 40
     template_name = 'blogs/blog_list.html'
 
     def get_queryset(self):
-        return Blog.objects.all()
+        return Blog.objects.all().order_by('-pub_date')
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_superuser:  # If not superuser, they dont have access
