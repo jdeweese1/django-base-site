@@ -1,15 +1,10 @@
 {% load compress static staticfiles %}
 
-{% block style %}
-    {% compress css %}
-    {% endcompress %}
-{% endblock style %}
-
 <div class="article">
     <header>
         <h2 class="blog_title block">{{ blog_post.title }}</h2>
         <h4 class="author">{{blog_post.author.first_name}} {{blog_post.author.last_name }}</h4>
-        <p class="pubdate">{{ blog_post.pub_date }} </p>
+        <p class="pub_date">{{ blog_post.pub_date }} </p>
     </header>
     <div class="article_body">
         {{ blog_post.content|safe }}

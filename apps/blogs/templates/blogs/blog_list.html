@@ -14,7 +14,6 @@
                 <th><a class="order-by-column" data-column="pub_date" href="#">Publication Date</a></th>
                 <th><a class="order-by-column" data-column="author" href="#">Author</a></th>
                 <th><a class="order-by-column" data-column="active" href="#">Active</a></th>
-
             </tr>
             {% for object in object_list %}
                 <tr>
@@ -22,7 +21,6 @@
                     <td>{{ object.pub_date }}</td>
                     <td>{{ object.author }}</td>
                     <td>{% if object.is_visible %} <i class="fas fa-check text-success"></i> {% else %} <i class="fas fa-times text-danger"></i> {% endif %}</td>
-
                 </tr>
             {% endfor %}
         </table>

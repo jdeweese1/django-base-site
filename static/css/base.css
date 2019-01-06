@@ -7,31 +7,7 @@
     --dark-brown-2: #dbc1acff;
     --dark-brown-1: #ece0d1ff;
 }
-.author{
-	color: black;
-	font-family: "Avenir Next";
-	padding: 10px;
-	border-style: none;
-	border-width: 10px;
-	border-radius: 10px;
-}
-.blog_title {
-    display: block;
-    color: black;
-	font-family: "Avenir Next";
-	padding: 10px;
-	border-style: none;
-	border-width: 10px;
-	border-radius: 10px;
-}
-.pub_date {
-	margin-top: 0px;
-	margin-bottom: 15px;
-	font-size: 15px;
-	color: grey;
-	text-align: center;
-	color: #ffffff;
-}
+
 
 .article.a {
 	color: #967259ff;
@@ -49,9 +25,7 @@ body{
 }
 img{
 	float:left;
-	border-width: 5px;
-	border-style: solid;
-	border-radius: 10px;
+	border-radius: 5px;
 	margin: 10px;
 	display: inline;
 }
@@ -60,4 +34,3 @@ img{
    float: left;
    margin: 0 20px 20px 20px;
 }
-
