@@ -51,6 +51,7 @@ class BlogCreateView(generic.FormView, generic.CreateView):
 
 
 class BlogListView(generic.ListView):
+    # Is my personal admin
     model = Blog
     paginate_by = 40
     template_name = 'blogs/blog_list.html'
