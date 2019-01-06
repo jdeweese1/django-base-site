@@ -13,5 +13,8 @@
 		{% csrf_token %}
 		{{ form|bootstrap}}
 		<div><button type="submit" class="btn btn-primary">Submit</button></div>
+		{% if object.pk %}
+		<div><a href="{{ object.get_absolute_url }}">Detail view</a></div>
+		{% endif %}
 	</form>
 {% endblock content %}
