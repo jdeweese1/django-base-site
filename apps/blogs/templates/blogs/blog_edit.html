@@ -9,6 +9,16 @@
 {% endblock script %}
 
 {% block content %}
+        {% block breadcrumb %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'blogs:blog_list' %}">Blog List</a></li>
+            <li class="breadcrumb-item active"><a href="{% url 'blogs:blog_edit' object.pk%}">{{ object.title}}</a></li>
+
+        </ol>
+    {% endblock breadcrumb %}
+
+
 	<form action="." method="post" enctype="multipart/form-data" data-disable-change="disable_change_warning">
 		{% csrf_token %}
 		{{ form|bootstrap}}
@@ -18,3 +28,6 @@
 		{% endif %}
 	</form>
 {% endblock content %}
+
+
+

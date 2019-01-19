@@ -1,4 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
@@ -22,7 +24,11 @@ class ContactFormView(generic.FormView, generic.CreateView):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
         Contact.objects.create(sender_name=sender_name, email=email, subject=subject, message=message, created=timezone.now())
-        return redirect(reverse('site_index'))  # add a list view
+        return redirect(reverse('contact:contact_submitted'))  # add a list view
+
+
+def contact_submitted(request):
+    return HttpResponse(render_to_string('contact/contact_submitted.html', request=request))
 
 
 class ContactListView(generic.ListView):
@@ -33,6 +39,7 @@ class ContactListView(generic.ListView):
         return qs
 
 
+
 class ContactDetailView(generic.DetailView):
     model = Contact
     template_name = 'contact/contact_detail.html'
@@ -40,4 +47,6 @@ class ContactDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['object'] = self.object
+        self.object.is_read = True  # Because we are loading the Detail View, the Contact object is now read
+        self.object.save()
         return context

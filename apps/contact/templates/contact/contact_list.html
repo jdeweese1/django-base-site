@@ -3,12 +3,22 @@
 {% load bootstrap %}
 
 {% block content %}
-<table class="table table-striped table-bordered">
+    {{ block.super }}
+            {% block breadcrumb %}
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'contact:contact_list' %}">Contact List</a></li>
+            </ol>
+            {% endblock breadcrumb %}
+
+
+        <table class="table table-striped table-bordered">
             <tr>
                 <th><a class="order-by-column" data-column="name" href="#">Sender Name</a></th>
                 <th><a class="order-by-column" data-column="subject" href="#">Subject</a></th>
                 <th><a class="order-by-column" data-column="email" href="#">Email Address</a></th>
                 <th><a class="order-by-column" data-column="created" href="#">Creation Date Name</a></th>
+                <th><a class="order-by-column" data-column="is_read" href="#">Is Read</a></th>
             </tr>
             {% for object in object_list %}
                 <tr>
@@ -16,6 +26,7 @@
                     <td>{{ object.subject }}</td>
                     <td>{{ object.email }}</td>
                     <td>{{ object.created }}</td>
+                    <td>{% if object.is_read %} <i class="fas fa-check text-success fa-lg"></i> {% else %} <i class="fas fa-times text-danger fa-lg"></i> {% endif %}</td>
 
                 </tr>
             {% endfor %}

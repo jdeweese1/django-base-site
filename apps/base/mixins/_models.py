@@ -6,3 +6,10 @@ class IsHiddenMixin(models.Model):
 
     class Meta(object):
         abstract = True
+
+
+class CreationDateMixin(models.Model):
+    created = models.DateTimeField(auto_now=True)
+
+    class Meta(object):
+        abstract = True

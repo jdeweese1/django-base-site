@@ -16,6 +16,7 @@ class ContactCreateForm(forms.ModelForm):
         self.fields['email'].required = True
         self.fields['subject'].required = True
         self.fields['message'].required = True
+        del self.fields['is_read']
 
     class Meta:
         model = Contact

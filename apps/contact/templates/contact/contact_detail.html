@@ -3,17 +3,41 @@
 {% block style %}
     {{ block.super }}
 {% endblock style %}
+
 {% block content %}
-<div class="container-fluid">
-    <header>
-        <h2 class="sender_name block">Sender name: {{ object.sender_name }}</h2>
-        <h4 class="subject">Subject: {{ object.subject}}</h4>
-        <p class="created">Submitted at: {{ object.created }} </p>
-    </header>
-    <div class="message">
-        <div>Message:</div>
-        {{ object.message }}
-        <hr>
+    {% block breadcrumb %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'contact:contact_list' %}">Contact List</a></li>
+            <li class="breadcrumb-item active"><a href="{{ object.get_absolute_url }}">{{ object.sender_name}}</a></li>
+
+        </ol>
+    {% endblock breadcrumb %}
+
+    <div class="container-fluid">
+        <table class="table table-striped">
+            <tr>
+                <td><h2 class="sender_name block">Sender name:</h2></td>
+                <td> {{ object.sender_name }}</td>
+            </tr>
+            <tr>
+                <td><h4 class="subject">Subject: </h4></td>
+                <td> {{ object.subject}}</td>
+            </tr>
+            <tr>
+                <td><p class="created">Submission Time: </p></td>
+                <td>{{ object.created }} </td>
+            </tr>
+            <tr>
+                <td>Message:</td>
+                <td>{{ object.message }}</td>
+            </tr>
+
+        </table>
+        <header>
+
+
+        </header>
+
     </div>
-</div>
-{% endblock %}
+{% endblock content%}
