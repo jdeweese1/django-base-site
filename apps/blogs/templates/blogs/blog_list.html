@@ -2,10 +2,17 @@
 
 {% load bootstrap %}
 
-
 {% block content %}
+    {{ block.super }}
+    {% block breadcrumb %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="{% url 'blogs:blog_list' %}">Blog List</a></li>
+        </ol>
+    {% endblock breadcrumb %}
+
 <div class="pull-right">
-    <a href="{% url "blogs:blog_create" %}" class="btn btn-primary">Create new</a>
+    <a href="{% url "blogs:blog_create" %}" class="btn btn-primary"><div class="fas fa-plus-square fa-lg"></div>  Create a {{ model_verbose_name }} </a>
 </div>
 <br>
 <table class="table table-striped table-bordered">
@@ -20,8 +27,9 @@
                     <td><a href="{% url 'blogs:blog_edit' object.pk %}">{{ object.title }}</a></td>
                     <td>{{ object.pub_date }}</td>
                     <td>{{ object.author }}</td>
-                    <td>{% if object.is_visible %} <i class="fas fa-check text-success"></i> {% else %} <i class="fas fa-times text-danger"></i> {% endif %}</td>
+                    <td>{% if object.is_visible %} <i class="fas fa-check text-success fa-lg"></i> {% else %} <i class="fas fa-times text-danger fa-lg"></i> {% endif %}</td>
                 </tr>
             {% endfor %}
         </table>
 {% endblock content %}
+O

@@ -8,11 +8,12 @@
         {% block style %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static "css/base.css" %}">
 
         {% compress css %}
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{% static "css/base.css" %}">
+
 
         {% endcompress %}
         {% endblock style %}
@@ -22,13 +23,20 @@
 
     <body{% block body_attr %} class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}"{% endblock %}>
         {% block base_header %}
+            {% block header %}
 
-            <div class="container">
-                    {% block navigation %}
-                        {% include 'blocks/navigation.html' %}
-                    {% endblock navigation %}
-                <hr>
-            </div>
+                <div class="container" style="display:block">
+                        {% block navigation %}
+                            {% include 'blocks/navigation.html' %}
+                        {% endblock navigation %}
+                    <hr>
+                    {% if user.is_authenticated %}
+                            {% include "logout_button.html" %}
+                    {% endif %}
+
+                </div>
+
+            {% endblock header %}
 
         {% endblock base_header %}
 
