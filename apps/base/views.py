@@ -40,6 +40,10 @@ class PortfolioView(generic.TemplateView):
     template_name = 'portfolio.html'
 
 
+class DashboardView(generic.TemplateView):
+    template_name = 'dashboard.html'
+
+
 def http_500(request):
     raise Exception
 
