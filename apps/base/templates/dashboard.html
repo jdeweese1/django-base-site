@@ -1,0 +1,13 @@
+{% extends 'dashboard_content.html' %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+
+{% endblock breadcrumb %}
+
+{% block content %}
+    {{ block.super }}
+{% include "dashboard_sidebar.html" %}
+
+
+{% endblock content %}
