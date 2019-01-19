@@ -1,0 +1,23 @@
+<div class="card pull-left" style="width: 18rem;" id="sidebar">
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">
+                <div class="container">
+                    <i class="fas fa-newspaper fa-2x"></i>
+                    <a href="{% url "blogs:blog_list" %}">Blog</a>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="container">
+                    <i class="far fa-envelope fa-2x"></i>
+                    <a href="{% url "contact:contact_list" %}">Contact</a>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="container">
+                    <i class="fas fa-cogs fa-2x"></i>
+                    <a href="{% url "admin:index" %}">Django Admin</a>
+                </div>
+            </li>
+  </ul>
+</div>

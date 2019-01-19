@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html' %}
+
+{% load bootstrap %}
+
+
+{% block content %}
+    {% block breadcrumb %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        </ol>
+    {% endblock breadcrumb %}
+
+{% endblock content %}
